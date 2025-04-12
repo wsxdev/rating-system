@@ -13,41 +13,74 @@ public class DatosEstudiantes {
         int cantidad = entrada.nextInt();
 
         /// Ingresamos el nombre de los estudiantes
+        String[] nombreEstudiantes = new String[cantidad];
         for (int i = 0; i < cantidad; i++) {
             System.out.print("Ingrese el nombre del estudiante " + (i + 1) + ": ");
-            String[] nombreEstudiantes = new String[cantidad];
             nombreEstudiantes[i] = entrada.next();
         }
+        ///Ingresamos las materias de cada PAO
+        String[] materias = null;
+        switch (pao) {
+            case 1:
+                materias = new String[] { "INGLES I", "FUNDAMENTOS DE PROGRAMACIÓN", "EDUCACION FISICA",
+                        "OFIMATICA", "SOSTENIBILIDAD AMBIENTAL", "ALGEBRA LINEAL ", "FISICA" };
+                System.out.println("Las materias del PAO 1 son: " + materias);
+                break;
 
-        String[] materiaPao1 = new String[] { "INGLES I", "FUNDAMENTOS DE PROGRAMACIÓN", "EDUCACION FISICA",
-                "OFIMATICA", "SOSTENIBILIDAD AMBIENTAL", "ALGEBRA LINEAL ", "FISICA" };
+            case 2:
+                System.out.println("Las materias del PAO 2 son: " + materias);
+                materias = new String[] { "INGLES II", "CALCULO I", "ADMINISTRACION DE SISTEMAS OPERATIVOS",
+                        "ARQUITECTURA DE LA INFORMACIÓN", "GESTION DE PROYECTOS TI", "COMUNICACIÓN ORAL Y ESCRITA" };
+                break;
 
-        String[] materiaPao2 = new String[] { "INGLES II", "CALCULO I", "ADMINISTRACION DE SISTEMAS OPERATIVOS",
-                "ARQUITECTURA DE LA INFORMACIÓN", "GESTION DE PROYECTOS TI", "COMUNICACIÓN ORAL Y ESCRITA" };
+            case 3:
+                materias = new String[] { "INGLES III ", "CALCULO II ", "GESTIÓN ADMINISTRATIVA",
+                        "ESTRUCTURA DE DATOS ", "FUNDAMENTOS DE BASE DE DATOS ",
+                        "REALIDAD SOCIOECONOMICA INTERCULTURALIDAD",
+                        "ESTADISTICA" };
+                System.out.println("Las materias del PAO 3 son: " + materias);
+                break;
 
-        String[] materiaPao3 = new String[] { "INGLES III ", "CALCULO II ", "GESTIÓN ADMINISTRATIVA",
-                "ESTRUCTURA DE DATOS ", "FUNDAMENTOS DE BASE DE DATOS ", "REALIDAD SOCIOECONOMICA INTERCULTURALIDAD",
-                "ESTADISTICA" };
+            case 4:
+                materias = new String[] { "INGLES IV", "ADMINISTRACIÓN DE BASE DE DATOS ",
+                        " SISTEMAS INTERACTIVOS Y MULTIMEDIA ", "SISTEMAS DE COMUNICACIÓN ",
+                        "INTELIGENCIA DE NEGOCIOS - PRÁCTICAS PREPROFESIONALES I",
+                        "EMPRENDIMIENTO" };
+                System.out.println("Las materias del PAO 4 son: " + materias);
+                break;
 
-        String[] materiaPao4 = new String[] { "INGLES IV", "ADMINISTRACIÓN DE BASE DE DATOS ",
-                " SISTEMAS INTERACTIVOS Y MULTIMEDIA ", "SISTEMAS DE COMUNICACIÓN ",
-                "INTELIGENCIA DE NEGOCIOS - PRÁCTICAS PREPROFESIONALES I",
-                "EMPRENDIMIENTO" };
+            case 5:
+                materias = new String[] { "BASES DE DATOS AVANZADAS ", "FUNDAMENTOS DE REDES ",
+                        "INTEROPERABILIDAD DE PLATAFORMAS ", "CONMUTACIÓN Y ENRUTAMIENTO ",
+                        "ÉTICIA Y RELACIONES HUMANAS",
+                        "INTERACCION HOMBRE MAQUINA" };
+                System.out.println("Las materias del PAO 5 son: " + materias);
+                break;
 
-        String[] materiaPao5 = new String[] { "BASES DE DATOS AVANZADAS ", "FUNDAMENTOS DE REDES ",
-                "INTEROPERABILIDAD DE PLATAFORMAS ", "CONMUTACIÓN Y ENRUTAMIENTO ", "ÉTICIA Y RELACIONES HUMANAS",
-                "INTERACCION HOMBRE MAQUINA" };
+            case 6:
+                materias = new String[] { "MINERIA DE DATOS", "CLOUD COMPUTING ", "TECNOLOGÍA WEB",
+                        "GESTIÓN DE SERVIDORES - PRÁCTICAS PREPROFESIONALES II", "ESCALABILIDAD DE REDES ",
+                        "COMPUTACION MOVIL" };
+                System.out.println("Las materias del PAO 6 son: " + materias);
+                break;
 
-        String[] materiaPao6 = new String[] { "MINERIA DE DATOS", "CLOUD COMPUTING ", "TECNOLOGÍA WEB",
-                "GESTIÓN DE SERVIDORES - PRÁCTICAS PREPROFESIONALES II", "ESCALABILIDAD DE REDES ",
-                "COMPUTACION MOVIL" };
+            case 7:
+                materias = new String[] { "AUDITORIA TI", "APLICACIONES PARA LA GESTION DE REDES ",
+                        "SEGURIDAD TI ",
+                        "VINCULACIÓN CON LA SOCIEDAD", "VIRTUALIZACIÓN", "SISTEMAS DE INFORMACION GEOGRAFICA" };
+                System.out.println("Las materias del PAO 7 son: " + materias);
+                break;
 
-        String[] materiaPao7 = new String[] { "AUDITORIA TI", "APLICACIONES PARA LA GESTION DE REDES ", "SEGURIDAD TI ",
-                "VINCULACIÓN CON LA SOCIEDAD", "VIRTUALIZACIÓN", "SISTEMAS DE INFORMACION GEOGRAFICA" };
-                
-        String[] materiaPao8 = new String[] { "DERECHO INFORMÁTICO ", "GOBIERNO TI ",
-                " METODOLOGIA DE LA INVESTIGACION CIENTIFICA ",
-                "FORMULACIÓN TRABAJO DE TITULACIÓN ", "TRABAJO DE TITULACIÓN" };
+            case 8:
+                materias = new String[] { "DERECHO INFORMÁTICO ", "GOBIERNO TI ",
+                        " METODOLOGIA DE LA INVESTIGACION CIENTIFICA ",
+                        "FORMULACIÓN TRABAJO DE TITULACIÓN ", "TRABAJO DE TITULACIÓN" };
+                System.out.println("Las materias del PAO 8 son: " + materias);
+                break;
+            default:
+                System.out.println("Error, ingrese el PAO correcto del 1 al 8");
+                break;
+        }
 
     }
 }
