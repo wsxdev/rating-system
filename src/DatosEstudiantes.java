@@ -19,12 +19,24 @@ public class DatosEstudiantes {
             nombreEstudiantes[i] = entrada.next();
         }
         ///Ingresamos las materias de cada PAO
-        String[] materias = null;
+        double[][] nota = new double [cantidad][nombreEstudiantes];
         switch (pao) {
             case 1:
-                materias = new String[] { "INGLES I", "FUNDAMENTOS DE PROGRAMACIÓN", "EDUCACION FISICA",
-                        "OFIMATICA", "SOSTENIBILIDAD AMBIENTAL", "ALGEBRA LINEAL ", "FISICA" };
-                System.out.println("Las materias del PAO 1 son: " + materias);
+            System.out.println("Ingrese la calificacion de las Materias del PAO 1 ");
+            System.out.print("INGLES I: ");
+            String nota = entrada.next();
+            System.out.print("FUNDAMENTOS DE PROGRAMACIÓN: ");
+            String nota = entrada.next();
+            System.out.print("EDUCACION FISICA: ");
+            String nota = entrada.next();
+            System.out.print("OFIMATICA: ");
+            String nota = entrada.next();
+            System.out.print("SOSTENIBILIDAD AMBIENTAL: ");
+            String nota = entrada.next();
+            System.out.print("ALGEBRA LINEAL: ");
+            String nota = entrada.next();
+            System.out.print("FISICA: ");
+            String nota = entrada.next();
                 break;
 
             case 2:
