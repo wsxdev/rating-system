@@ -81,7 +81,7 @@ public class DatosEstudiantes {
             for (int j = 0; j < materias.length; j++) {
                 System.out.print(" -" + materias[j]+ " : ");
                 // Fíjese aquí, al momento de leer las notas, se llama al método leerNotaValida y se le pasa la variable entrada como parámetro
-                notas[i][j] = leerNotaValida(entrada);
+                notas[i][j] = leerNotaValida(entrada, materias[j]);
             }
         }
     }
@@ -89,7 +89,7 @@ public class DatosEstudiantes {
     
     // MÉTODO PARA VALIDAR DATOS DE ENTRADA
     // Este método recibe un parámetro tipo Scanner, llamado entradaValida
-    public static double leerNotaValida(Scanner entradaValida) {
+    public static double leerNotaValida(Scanner entradaValida, String materiaTemporal) {
         double nota;
         while (true) {
             if (entradaValida.hasNextDouble()) { // hasNextDouble verfica si lo ingresado es válido
@@ -97,10 +97,12 @@ public class DatosEstudiantes {
                 if (nota >= 0 && nota <= 10) {
                     break;
                 } else {
-                    System.out.print("\nERROR: la nota debe estar entre 0 y 10\nIntente de nuevo: ");
+                    System.out.print("\nERROR: la nota debe estar entre 0 y 10\nIntente de nuevo ");
+                    System.out.println("\n -"+materiaTemporal+ ":");
                 }
             } else {
                 System.out.print("\nEROR: ¡La nota es un NÚMERO! :/\nIntente de nuevo: ");
+                System.out.print("\n -"+materiaTemporal+ ":");
                 entradaValida.next();
             }
         }
