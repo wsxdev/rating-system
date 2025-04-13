@@ -79,7 +79,7 @@ public class DatosEstudiantes {
         for (int i = 0; i < cantidad; i++) {
             System.out.println("Estudiante: "+nombreEstudiantes[i]);
             for (int j = 0; j < materias.length; j++) {
-                System.out.print(" -" + materias[j]+ " :");
+                System.out.print(" -" + materias[j]+ " : ");
                 notas[i][j] = entrada.nextDouble();
             }
         }
