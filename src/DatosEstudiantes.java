@@ -92,16 +92,15 @@ public class DatosEstudiantes {
     public static double leerNotaValida(Scanner entradaValida) {
         double nota;
         while (true) {
-            System.out.print("Ingrese una nota (0 a 10): ");
             if (entradaValida.hasNextDouble()) { // hasNextDouble verfica si lo ingresado es válido
                 nota = entradaValida.nextDouble();
                 if (nota >= 0 && nota <= 10) {
                     break;
                 } else {
-                    System.out.println("ERROR: la nota debe estar entre 0 y 10");
+                    System.out.print("\nERROR: la nota debe estar entre 0 y 10\nIntente de nuevo: ");
                 }
             } else {
-                System.out.println("EROR: ¡la nota es un NÚMERO! :/");
+                System.out.print("\nEROR: ¡La nota es un NÚMERO! :/\nIntente de nuevo: ");
                 entradaValida.next();
             }
         }
