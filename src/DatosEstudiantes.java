@@ -70,18 +70,41 @@ public class DatosEstudiantes {
                 break;
             default:
                 System.out.println("Error, ingrese el PAO correcto del 1 al 8");
-                break;
+                return; // Para que se salga del método actual
         }
         ///Matriz para agregar las notas
         double[][] notas = new double[cantidad][materias.length];
 
-        System.out.println("Ingrese las calificaciones de cada estudiante del PAO " + pao + ":");
+        System.out.println("Ingrese las calificaciones de cada estudiante del PAO " + pao + ": ");
         for (int i = 0; i < cantidad; i++) {
-            System.out.println("Estudiante: "+nombreEstudiantes[i]);
+            System.out.println("Estudiante: " + nombreEstudiantes[i]);
             for (int j = 0; j < materias.length; j++) {
                 System.out.print(" -" + materias[j]+ " : ");
-                notas[i][j] = entrada.nextDouble();
+                // Fíjese aquí, al momento de leer las notas, se llama al método leerNotaValida y se le pasa la variable entrada como parámetro
+                notas[i][j] = leerNotaValida(entrada);
             }
         }
+    }
+    
+    
+    // MÉTODO PARA VALIDAR DATOS DE ENTRADA
+    // Este método recibe un parámetro tipo Scanner, llamado entradaValida
+    public static double leerNotaValida(Scanner entradaValida) {
+        double nota;
+        while (true) {
+            System.out.print("Ingrese una nota (0 a 10): ");
+            if (entradaValida.hasNextDouble()) { // hasNextDouble verfica si lo ingresado es válido
+                nota = entradaValida.nextDouble();
+                if (nota >= 0 && nota <= 10) {
+                    break;
+                } else {
+                    System.out.println("ERROR: la nota debe estar entre 0 y 10");
+                }
+            } else {
+                System.out.println("EROR: ¡la nota es un NÚMERO! :/");
+                entradaValida.next();
+            }
+        }
+        return nota;
     }
 }
