@@ -77,8 +77,9 @@ public class DatosEstudiantes {
 
         System.out.println("Ingrese las calificaciones de cada estudiante del PAO " + pao + ":");
         for (int i = 0; i < cantidad; i++) {
+            System.out.println("Estudiante: "+nombreEstudiantes[i]);
             for (int j = 0; j < materias.length; j++) {
-                System.out.println("Ingrese la nota " + materias[j] + "del estudiante " + nombreEstudiantes[i] + ":");
+                System.out.print(" -" + materias[j]+ " :");
                 notas[i][j] = entrada.nextDouble();
             }
         }
