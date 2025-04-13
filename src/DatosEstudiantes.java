@@ -1,4 +1,3 @@
-
 import java.util.Scanner;
 
 public class DatosEstudiantes {
@@ -7,9 +6,8 @@ public class DatosEstudiantes {
         ///Ingresamos los PAOS
         System.out.print("Ingrese el PAO a calificar: ");
         int pao = entrada.nextInt();
-
         /// Ingresamos el numero de estudiantes
-        System.out.print("Ingrese el numero de estudiantes del PAO " + pao + ":");
+        System.out.print("Ingrese el numero de estudiantes del PAO " + pao + ": ");
         int cantidad = entrada.nextInt();
 
         /// Ingresamos el nombre de los estudiantes
@@ -19,30 +17,17 @@ public class DatosEstudiantes {
             nombreEstudiantes[i] = entrada.next();
         }
         ///Ingresamos las materias de cada PAO
-        double[][] nota = new double [cantidad][nombreEstudiantes];
+        String [] materias = null;
         switch (pao) {
             case 1:
-            System.out.println("Ingrese la calificacion de las Materias del PAO 1 ");
-            System.out.print("INGLES I: ");
-            String nota = entrada.next();
-            System.out.print("FUNDAMENTOS DE PROGRAMACIÓN: ");
-            String nota = entrada.next();
-            System.out.print("EDUCACION FISICA: ");
-            String nota = entrada.next();
-            System.out.print("OFIMATICA: ");
-            String nota = entrada.next();
-            System.out.print("SOSTENIBILIDAD AMBIENTAL: ");
-            String nota = entrada.next();
-            System.out.print("ALGEBRA LINEAL: ");
-            String nota = entrada.next();
-            System.out.print("FISICA: ");
-            String nota = entrada.next();
+            materias = new String[] { "INGLES I", "FUNDAMENTOS DE PROGRAMACIÓN", "EDUCACION FISICA",
+                "OFIMATICA", "SOSTENIBILIDAD AMBIENTAL", "ALGEBRA LINEAL ", "FISICA" };
                 break;
 
             case 2:
-                System.out.println("Las materias del PAO 2 son: " + materias);
                 materias = new String[] { "INGLES II", "CALCULO I", "ADMINISTRACION DE SISTEMAS OPERATIVOS",
-                        "ARQUITECTURA DE LA INFORMACIÓN", "GESTION DE PROYECTOS TI", "COMUNICACIÓN ORAL Y ESCRITA" };
+                        "ARQUITECTURA DE LA INFORMACIÓN", "GESTION DE PROYECTOS TI",
+                        "COMUNICACIÓN ORAL Y ESCRITA" };
                 break;
 
             case 3:
@@ -50,7 +35,6 @@ public class DatosEstudiantes {
                         "ESTRUCTURA DE DATOS ", "FUNDAMENTOS DE BASE DE DATOS ",
                         "REALIDAD SOCIOECONOMICA INTERCULTURALIDAD",
                         "ESTADISTICA" };
-                System.out.println("Las materias del PAO 3 son: " + materias);
                 break;
 
             case 4:
@@ -58,7 +42,6 @@ public class DatosEstudiantes {
                         " SISTEMAS INTERACTIVOS Y MULTIMEDIA ", "SISTEMAS DE COMUNICACIÓN ",
                         "INTELIGENCIA DE NEGOCIOS - PRÁCTICAS PREPROFESIONALES I",
                         "EMPRENDIMIENTO" };
-                System.out.println("Las materias del PAO 4 son: " + materias);
                 break;
 
             case 5:
@@ -66,33 +49,38 @@ public class DatosEstudiantes {
                         "INTEROPERABILIDAD DE PLATAFORMAS ", "CONMUTACIÓN Y ENRUTAMIENTO ",
                         "ÉTICIA Y RELACIONES HUMANAS",
                         "INTERACCION HOMBRE MAQUINA" };
-                System.out.println("Las materias del PAO 5 son: " + materias);
                 break;
 
             case 6:
                 materias = new String[] { "MINERIA DE DATOS", "CLOUD COMPUTING ", "TECNOLOGÍA WEB",
                         "GESTIÓN DE SERVIDORES - PRÁCTICAS PREPROFESIONALES II", "ESCALABILIDAD DE REDES ",
                         "COMPUTACION MOVIL" };
-                System.out.println("Las materias del PAO 6 son: " + materias);
                 break;
 
             case 7:
                 materias = new String[] { "AUDITORIA TI", "APLICACIONES PARA LA GESTION DE REDES ",
                         "SEGURIDAD TI ",
                         "VINCULACIÓN CON LA SOCIEDAD", "VIRTUALIZACIÓN", "SISTEMAS DE INFORMACION GEOGRAFICA" };
-                System.out.println("Las materias del PAO 7 son: " + materias);
                 break;
 
             case 8:
                 materias = new String[] { "DERECHO INFORMÁTICO ", "GOBIERNO TI ",
                         " METODOLOGIA DE LA INVESTIGACION CIENTIFICA ",
                         "FORMULACIÓN TRABAJO DE TITULACIÓN ", "TRABAJO DE TITULACIÓN" };
-                System.out.println("Las materias del PAO 8 son: " + materias);
                 break;
             default:
                 System.out.println("Error, ingrese el PAO correcto del 1 al 8");
                 break;
         }
+        ///Matriz para agregar las notas
+        double[][] notas = new double[cantidad][materias.length];
 
+        System.out.println("Ingrese las calificaciones de cada estudiante del PAO " + pao + ":");
+        for (int i = 0; i < cantidad; i++) {
+            for (int j = 0; j < materias.length; j++) {
+                System.out.println("Ingrese la nota " + materias[j] + "del estudiante " + nombreEstudiantes[i] + ":");
+                notas[i][j] = entrada.nextDouble();
+            }
+        }
     }
 }
