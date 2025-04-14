@@ -50,7 +50,7 @@ public class DatosEstudiantes {
         switch (pao) {
             case 1:
                 materias = new String[] { " INGLES I", " FUNDAMENTOS DE PROGRAMACIÓN", " EDUCACION FISICA",
-                        " OFIMATICA", " SOSTENIBILIDAD AMBIENTAL", " ALGEBRA LINEAL ", " FISICA" };
+                        " OFIMATICA", " SOSTENIBILIDAD AMBIENTAL", " ALGEBRA LINEAL", " FISICA" };
                 break;
 
             case 2:
@@ -101,8 +101,11 @@ public class DatosEstudiantes {
                 break;
         }
         ///Matriz para agregar las notas
-        double[][] notas = new double[cantidadEstudiantes][materias.length];
-        System.out.println("[ INGRESO DE NOTAS ]");
+        double[][] notasCiclo1 = new double[cantidadEstudiantes][materias.length];
+        double[][] notasCiclo2 = new double[cantidadEstudiantes][materias.length];
+        
+        // CICLO 1
+        System.out.println("[ INGRESO DE NOTAS - CICLO 1 ]");
         for (int i = 0; i < cantidadEstudiantes; i++) {
             System.out.println("  \nEstudiante: " + nombreEstudiantes[i]);
             // ASIGNAR NOTAS DE ACUERDO A LAS MATERIAS 
@@ -110,10 +113,22 @@ public class DatosEstudiantes {
                 System.out.print("    >" + materias[j] + ": ");
                 // Fíjese aquí, al momento de leer las notas, se llama al método leerNotaValida
                 // y se le pasa la variable entrada como parámetro
-                notas[i][j] = leerNotaValida(entrada, materias[j]);
+                notasCiclo1[i][j] = leerNotaValida(entrada, materias[j]);
             }
         }
         System.out.println(" ");
+        // CICLO 2
+        System.out.println("[ INGRESO DE NOTAS - CICLO 2 ]");
+        for (int i = 0; i < cantidadEstudiantes; i++) {
+            System.out.println("  \nEstudiante: " + nombreEstudiantes[i]);
+            // ASIGNAR NOTAS DE ACUERDO A LAS MATERIAS 
+            for (int j = 0; j < materias.length; j++) {
+                System.out.print("    >" + materias[j] + ": ");
+                notasCiclo2[i][j] = leerNotaValida(entrada, materias[j]);
+            }
+        }
+        System.out.println(" ");
+        Calificaciones.mostrarResultados(nombreEstudiantes, materias, notasCiclo1, notasCiclo2, entrada);
     }
 
     // MÉTODO PARA VALIDAR DATOS DE ENTRADA
