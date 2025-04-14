@@ -20,7 +20,7 @@ public class DatosEstudiantes {
         /// Ingresamos el nombre de los estudiantes
         String[] nombreEstudiantes = new String[cantidad];
         for (int i = 0; i < cantidad; i++) {
-            System.out.print("   " + "Nombre del estudiante" + (i + 1) + ": ");
+            System.out.print("   " + "Nombre del estudiante " + (i + 1) + ": ");
             nombreEstudiantes[i] = entrada.next();
         }
         System.out.println("");
@@ -84,6 +84,7 @@ public class DatosEstudiantes {
         double[][] notas = new double[cantidad][materias.length];
         System.out.println("[ INGRESO DE NOTAS ]");
         for (int i = 0; i < cantidad; i++) {
+            System.out.println("");
             System.out.println("  Estudiante: " + nombreEstudiantes[i]);
             for (int j = 0; j < materias.length; j++) {
                 System.out.print("    >" + materias[j] + ": ");
