@@ -20,7 +20,7 @@ public class DatosEstudiantes {
         /// Ingresamos el nombre de los estudiantes
         String[] nombreEstudiantes = new String[cantidad];
         for (int i = 0; i < cantidad; i++) {
-            System.out.print("   " + "Nombre del estudiante " + (i + 1) + " : ");
+            System.out.print("   " + "Nombre del estudiante" + (i + 1) + ": ");
             nombreEstudiantes[i] = entrada.next();
         }
         System.out.println("");
@@ -39,42 +39,42 @@ public class DatosEstudiantes {
                 break;
 
             case 3:
-                materias = new String[] { " INGLES III ", " CALCULO II ", " GESTIÓN ADMINISTRATIVA",
-                        " ESTRUCTURA DE DATOS ", " FUNDAMENTOS DE BASE DE DATOS ",
+                materias = new String[] { " INGLES III", " CALCULO II", " GESTIÓN ADMINISTRATIVA",
+                        " ESTRUCTURA DE DATOS", " FUNDAMENTOS DE BASE DE DATOS",
                         " REALIDAD SOCIOECONOMICA INTERCULTURALIDAD",
                         " ESTADISTICA" };
                 break;
 
             case 4:
-                materias = new String[] { " INGLES IV", " ADMINISTRACIÓN DE BASE DE DATOS ",
-                        " SISTEMAS INTERACTIVOS Y MULTIMEDIA ", " SISTEMAS DE COMUNICACIÓN ",
+                materias = new String[] { " INGLES IV", " ADMINISTRACIÓN DE BASE DE DATOS",
+                        " SISTEMAS INTERACTIVOS Y MULTIMEDIA", " SISTEMAS DE COMUNICACIÓN",
                         " INTELIGENCIA DE NEGOCIOS - PRÁCTICAS PREPROFESIONALES I",
                         " EMPRENDIMIENTO" };
                 break;
 
             case 5:
-                materias = new String[] { " BASES DE DATOS AVANZADAS ", " FUNDAMENTOS DE REDES ",
-                        " INTEROPERABILIDAD DE PLATAFORMAS ", " CONMUTACIÓN Y ENRUTAMIENTO ",
+                materias = new String[] { " BASES DE DATOS AVANZADAS", " FUNDAMENTOS DE REDES",
+                        " INTEROPERABILIDAD DE PLATAFORMAS", " CONMUTACIÓN Y ENRUTAMIENTO",
                         " ÉTICIA Y RELACIONES HUMANAS",
                         " INTERACCION HOMBRE MAQUINA" };
                 break;
 
             case 6:
-                materias = new String[] { " MINERIA DE DATOS", " CLOUD COMPUTING ", " TECNOLOGÍA WEB",
-                        " GESTIÓN DE SERVIDORES - PRÁCTICAS PREPROFESIONALES II", " ESCALABILIDAD DE REDES ",
+                materias = new String[] { " MINERIA DE DATOS", " CLOUD COMPUTING", " TECNOLOGÍA WEB",
+                        " GESTIÓN DE SERVIDORES - PRÁCTICAS PREPROFESIONALES II", " ESCALABILIDAD DE REDES",
                         " COMPUTACION MOVIL" };
                 break;
 
             case 7:
-                materias = new String[] { " AUDITORIA TI", " APLICACIONES PARA LA GESTION DE REDES ",
-                        " SEGURIDAD TI ",
+                materias = new String[] { " AUDITORIA TI", " APLICACIONES PARA LA GESTION DE REDES",
+                        " SEGURIDAD TI",
                         " VINCULACIÓN CON LA SOCIEDAD", " VIRTUALIZACIÓN", " SISTEMAS DE INFORMACION GEOGRAFICA" };
                 break;
 
             case 8:
-                materias = new String[] { " DERECHO INFORMÁTICO ", " GOBIERNO TI ",
-                        " METODOLOGIA DE LA INVESTIGACION CIENTIFICA ",
-                        " FORMULACIÓN TRABAJO DE TITULACIÓN ", " TRABAJO DE TITULACIÓN" };
+                materias = new String[] { " DERECHO INFORMÁTICO", " GOBIERNO TI",
+                        " METODOLOGIA DE LA INVESTIGACION CIENTIFICA",
+                        " FORMULACIÓN TRABAJO DE TITULACIÓN", " TRABAJO DE TITULACIÓN" };
                 break;
             default:
                 System.out.println(" Error, ingrese el PAO correcto del 1 al 8");
@@ -86,13 +86,13 @@ public class DatosEstudiantes {
         for (int i = 0; i < cantidad; i++) {
             System.out.println("  Estudiante: " + nombreEstudiantes[i]);
             for (int j = 0; j < materias.length; j++) {
-                System.out.print("    >" + materias[j] + " : ");
+                System.out.print("    >" + materias[j] + ": ");
                 // Fíjese aquí, al momento de leer las notas, se llama al método leerNotaValida
                 // y se le pasa la variable entrada como parámetro
                 notas[i][j] = leerNotaValida(entrada, materias[j]);
             }
         }
-        System.out.println("  -----------------------");
+        System.out.println(" ");
     }
 
     // MÉTODO PARA VALIDAR DATOS DE ENTRADA
@@ -109,14 +109,14 @@ public class DatosEstudiantes {
                     System.out.println("   ERROR: la nota debe estar entre 0 y 10");
                     System.out.println("   Intente de nuevo");
                     System.out.println("  -------------------");
-                    System.out.println("    >" + materiaTemporal + " : ");
+                    System.out.print("    >" + materiaTemporal + ": ");
                 }
             } else {
                 System.out.println("  -------------------");
                 System.out.println("   ERROR: ¡La nota debe ser un NÚMERO! :/");
                 System.out.println("   Intente de nuevo ");
                 System.out.println("  -------------------");
-                System.out.print("    >" + materiaTemporal + " : ");
+                System.out.print("    >" + materiaTemporal + ": ");
                 entradaValida.next();
             }
         }
