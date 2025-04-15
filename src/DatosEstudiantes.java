@@ -35,14 +35,15 @@ public class DatosEstudiantes {
                 System.out.println("  ---------------------------------------");
             }
         }
-        
+
         System.out.println("\n[ NOMBRES DE LOS ESTUDIANTES ]");
 
         /// Ingresamos el nombre de los estudiantes
         String[] nombreEstudiantes = new String[cantidadEstudiantes];
         for (int i = 0; i < cantidadEstudiantes; i++) {
             System.out.print("   Nombre del estudiante " + (i + 1) + ": ");
-            nombreEstudiantes[i] = entrada.next();
+            entrada.nextLine();
+            nombreEstudiantes[i] = leerNombreValido(entrada);
         }
         System.out.println("");
         /// Ingresamos las materias de cada PAO
@@ -103,12 +104,12 @@ public class DatosEstudiantes {
         ///Matriz para agregar las notas
         double[][] notasCiclo1 = new double[cantidadEstudiantes][materias.length];
         double[][] notasCiclo2 = new double[cantidadEstudiantes][materias.length];
-        
+
         // CICLO 1
         System.out.println("[ INGRESO DE NOTAS - CICLO 1 ]");
         for (int i = 0; i < cantidadEstudiantes; i++) {
             System.out.println("  \nEstudiante: " + nombreEstudiantes[i]);
-            // ASIGNAR NOTAS DE ACUERDO A LAS MATERIAS 
+            // ASIGNAR NOTAS DE ACUERDO A LAS MATERIAS
             for (int j = 0; j < materias.length; j++) {
                 System.out.print("    >" + materias[j] + ": ");
                 // Fíjese aquí, al momento de leer las notas, se llama al método leerNotaValida
@@ -121,7 +122,7 @@ public class DatosEstudiantes {
         System.out.println("[ INGRESO DE NOTAS - CICLO 2 ]");
         for (int i = 0; i < cantidadEstudiantes; i++) {
             System.out.println("  \nEstudiante: " + nombreEstudiantes[i]);
-            // ASIGNAR NOTAS DE ACUERDO A LAS MATERIAS 
+            // ASIGNAR NOTAS DE ACUERDO A LAS MATERIAS
             for (int j = 0; j < materias.length; j++) {
                 System.out.print("    >" + materias[j] + ": ");
                 notasCiclo2[i][j] = leerNotaValida(entrada, materias[j]);
@@ -132,6 +133,24 @@ public class DatosEstudiantes {
     }
 
     // MÉTODO PARA VALIDAR DATOS DE ENTRADA
+    // MÉTODO PARA VALIDAR NOMBRES
+    public static String leerNombreValido(Scanner entradaNombreValido) {
+        String nombre;
+        while (true) {
+            nombre = entradaNombreValido.nextLine();
+            if (nombre.matches("[a-zA-ZáéíóúÁÉÍÓÚñÑ ]+")) {
+                break;
+            } else {
+                System.out.println("\n  --------------------------------------");
+                System.out.println("  ERROR: Ingrese un nombre válido");
+                System.out.println("  Intente de nuevo");
+                System.out.println("  --------------------------------------");
+                System.out.print("   Nombre del estudiante: ");
+            }
+        }
+        return nombre;
+    }
+
     // Este método recibe un parámetro tipo Scanner, llamado entradaValida
     public static double leerNotaValida(Scanner entradaNotaValida, String materiaTemporal) {
         double nota;
@@ -160,7 +179,7 @@ public class DatosEstudiantes {
     }
 
     // MÉTODO PARA VALIDAR DATOS NUMÉRICOS
-    public static int leerNumerosValidos(Scanner entradaNumerica){
+    public static int leerNumerosValidos(Scanner entradaNumerica) {
         int numero;
         while (true) {
             if (entradaNumerica.hasNextInt()) {
